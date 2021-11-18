@@ -1,6 +1,7 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  height: 100%;
 }
 
 *, *::before, *::after {
@@ -9,34 +10,47 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  background: linear-gradient(rgba(0,0,0,.9), rgba(0, 0, 0, .8)), url("https://t3.ftcdn.net/jpg/02/58/94/74/240_F_258947425_FdwXFXX5zxm5hqOi3vtZgpYJ7vbqqGHw.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
 .calculator {
   border: 1px transparent rgb(133, 123, 123);
-  border-radius: 20px;
+  border-radius: 15px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* used to select horizontal and vertical direction/coordinates */ 
   width: 400px;
   max-width: fit-content; /* resizes as your browser window resizes */ 
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 1) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: rgb(61, 61, 61);
 }
 
 .calculator-screen {
   width: 100%;
-  font-size: 5rem;
   height: 80px;
+  font-size: 5rem;
   border: none;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  background-color: #252525;
+  border-radius: 5px;
+  background-color: #000000;
   color: white;
   text-align: right;
   padding-right: 20px;
   padding-left: 10px;
 }
 
+#calculator-screen {
+  padding: 20px;
+  padding-bottom: 0%;
+}
+
 .operator {
   color: #337cac;
+  font-size: 3rem;
 }
 
 button {
@@ -44,7 +58,6 @@ button {
   background-color: white;
   border-radius: 3px;
   border: 1px solid #c4c4c4;
-  background-color: transparent;
   font-size: 2rem;
   color: #333;
 }
