@@ -1,54 +1,98 @@
 // an object to keep track of the operands and operator
 const calculator = {
-    displayValue: '0', // this holds the input of a user or the result of an operation
-    firstOperand: null,
-    waitingForSecondOperand: false, // to check if the first operand and the operator have been inputed
-    operator: null,
+  displayValue: '0',
+  firstOperand: null,
+  waitingForSecondOperand: false, // check if first operand and operator have been inputed
+  operator: null,
 };
 
 function inputDigit(digit) {
-    const displayValue = calculator.displayValue;
-    // Overwrite 'displayValue' if the current value is '0' otherwise append to it
+  const { displayValue, waitingForSecondOperand } = calculator;
+  if (waitingForSecondOperand === true) {
+    calculator.displayValue = digit;
+    calculator.waitingForSecondOperand = false;
+  } else {
     calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
   }
+  console.log(calculator);
+}  
 
 function inputDecimal(dot) {
-    // if the 'displayValue' property does not contain a decimal point
-    if (!calculator.displayValue.includes(dot)) {
-        // Append the decimal point
-        calculator.displayValue += dot;
-    }
+  if (calculator.waitingForSecondOperand === true) {
+  	calculator.displayValue = '0.'
+    calculator.waitingForSecondOperand = false;
+    return;
+  } else if (!calculator.displayValue.includes(dot)) {
+    calculator.displayValue += dot;
+  }
+}
+
+function handleOperator(nextOperator) {
+  const { firstOperand, displayValue, operator } = calculator;
+  const inputValue = parseFloat(displayValue);
+
+  if (operator && calculator.waitingForSecondOperand)  {
+    calculator.operator = nextOperator; // overwrite the existing operator
+    console.log(calculator);
+    return;
+  } else if (firstOperand === null && !isNaN(inputValue)) {
+    calculator.firstOperand = inputValue;
+  } else if (operator) {
+    const result = calculate(firstOperand, inputValue, operator);
+    calculator.displayValue = `${parseFloat(result.toFixed(7))}`; // limit result to 7 decimal places
+    calculator.firstOperand = result; // make the result a new input
+  }
+
+  calculator.waitingForSecondOperand = true;
+  calculator.operator = nextOperator;
+  console.log(calculator);
+}
+
+function calculate(firstOperand, secondOperand, operator) {
+  if (operator === '+') {
+    return firstOperand + secondOperand;
+  } else if (operator === '-') {
+    return firstOperand - secondOperand;
+  } else if (operator === '*') {
+    return firstOperand * secondOperand;
+  } else if (operator === '/') {
+    return firstOperand / secondOperand;
+  }
+  return secondOperand; // if the operator is the equal sign (=)  
 }
 
 function updateDisplay() {
-    // select the element with class of 'calculator-screen'
-    const display = document.querySelector('.calculator-screen'); // or use document.getElementById("elementId")
-    // update the value of the element with the contents of 'displayValue'
-    display.value = calculator.displayValue;
+  const display = document.querySelector('.calculator-screen'); // or use document.getElementById("elementId")
+  // update the value of the element with the contents of 'displayValue'
+  display.value = calculator.displayValue;
 }
-updateDisplay();
+
+function resetCalculator() {
+  calculator.displayValue = '0';
+  calculator.firstOperand = null;
+  calculator.waitingForSecondOperand = false;
+  calculator.operator = null;
+}
 
 const keys = document.querySelector('.calculator-keys');
 keys.addEventListener('click', (event) => {
-    // access the clicked element
-    const target = event.target; // equivalent to const { target } = event
-
-    // Check if the clicked element is a button; if not, exit from the function
-    if (!target.matches('button')) {
-        return;
-    } else if (target.classList.contains('operator')) {
-        console.log('operator', target.value);
-        return;
-    } else if (target.classList.contains('decimal')) {
-        console.log('decimal', target.value);
-        return;
-    } else if (target.classList.contains('all-clear')) {
-        console.log('clear', target.value);
-        return;
-    } else if (target.classList.contains('equal-sign')) {
-        console.log('equal-sign', target.value);
-        return;
-    }
+  const { target } = event; // access the clicked element's class
+  if (!target.matches('button')) {
+    return;
+  } else if (target.classList.contains('operator')) {
+    handleOperator(target.value);
+    updateDisplay();
+    return;
+  } else if (target.classList.contains('decimal')) {
+    inputDecimal(target.value);
+    updateDisplay();
+    return;
+  } else if (target.classList.contains('all-clear')) {
+    resetCalculator();
+    updateDisplay();      
+    return;
+  } else {
     inputDigit(target.value);
     updateDisplay();
+  }
 });
