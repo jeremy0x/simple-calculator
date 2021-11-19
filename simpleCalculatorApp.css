@@ -66,6 +66,10 @@ button:hover {
   background-color: #9b9797;
 }
 
+button:active {
+  background-color: white;
+}
+
 .all-clear {
   background-color: #f0595f;
   border-color: #b0353a;
@@ -76,16 +80,24 @@ button:hover {
   background-color: #f17377;
 }
 
+.all-clear:active {
+  background-color: #eb353b;
+}
+
 .equal-sign {
   background-color: #2e86c0;
   border-color: #337cac;
   color: #fff;
   height: auto;
-  grid-area: 2 / 4 / 6; /*grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end; */
+  grid-area: 3 / 4 / 6; /*grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end; */
 }
 
 .equal-sign:hover {
   background-color: #4e9ed4;
+}
+
+.equal-sign:active {
+  background-color: #1909f5;
 }
 
 .calculator-keys {
