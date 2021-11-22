@@ -15,7 +15,7 @@ function inputDigit(digit) {
     calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
   }
   console.log(calculator);
-}  
+}
 
 function inputDecimal(dot) {
   if (calculator.waitingForSecondOperand === true) {
@@ -58,7 +58,7 @@ function calculate(firstOperand, secondOperand, operator) {
   } else if (operator === '/') {
     return firstOperand / secondOperand;
   }
-  return secondOperand; // if the operator is the equal sign (=)  
+  return secondOperand; // if the operator is the equal sign (=)
 }
 
 function updateDisplay() {
@@ -89,7 +89,7 @@ keys.addEventListener('click', (event) => {
     return;
   } else if (target.classList.contains('all-clear')) {
     resetCalculator();
-    updateDisplay();      
+    updateDisplay();
     return;
   } else {
     inputDigit(target.value);
