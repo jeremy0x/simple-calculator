@@ -48,6 +48,8 @@ function handleOperator(nextOperator) {
   console.log(calculator);
 }
 
+
+
 function calculate(firstOperand, secondOperand, operator) {
   if (operator === '+') {
     return firstOperand + secondOperand;
@@ -57,6 +59,8 @@ function calculate(firstOperand, secondOperand, operator) {
     return firstOperand * secondOperand;
   } else if (operator === '/') {
     return firstOperand / secondOperand;
+  } else if (operator === '%') {
+    return (firstOperand / 100) * secondOperand;
   }
   return secondOperand; // if the operator is the equal sign (=)
 }
@@ -65,6 +69,11 @@ function updateDisplay() {
   const display = document.querySelector('.calculator-screen'); // or use document.getElementById("elementId")
   // update the value of the element with the contents of 'displayValue'
   display.value = calculator.displayValue;
+}
+
+function deleteKey() {
+  value = calculator.displayValue;
+  calculator.displayValue = value.substr(0, value.length - 1);
 }
 
 function resetCalculator() {
@@ -83,8 +92,12 @@ keys.addEventListener('click', (event) => {
     handleOperator(target.value);
     updateDisplay();
     return;
-  } else if (target.classList.contains('decimal')) {
+  }  else if (target.classList.contains('decimal')) {
     inputDecimal(target.value);
+    updateDisplay();
+    return;
+  } else if (target.classList.contains('delete')) {
+    deleteKey();
     updateDisplay();
     return;
   } else if (target.classList.contains('all-clear')) {
