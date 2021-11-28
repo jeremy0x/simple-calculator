@@ -83,18 +83,6 @@ button:hover { background-color: rgb(175, 172, 172); } button:active { backgroun
 
 .equal-sign:hover { background-color: rgb(175, 172, 172); } .equal-sign:active { background-color: white; }
 
-a {
-  text-decoration: none;
-  color: white;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: rgb(187, 187, 255);
-}
-
-a:active { text-decoration: none; } a:visited { color: white }
-
 .orange-button {
   background-color: rgb(255, 101, 45);
   border-color: transparent;
@@ -103,11 +91,3 @@ a:active { text-decoration: none; } a:visited { color: white }
 }
 
 .orange-button:hover { background-color: rgb(252, 138, 101); } .orange-button:active { background-color: rgb(255, 101, 45); }
-
-.copyright {
-  font-size: 2.5vmin;
-  position: absolute;
-  bottom: 0;
-  color: white;
-  width: 100%;
-}
