@@ -27,7 +27,7 @@ body {
   transform: translate(-50%, -50%); /* used to select horizontal and vertical direction/coordinates */
   width: 400px;
   max-width: fit-content; /* resizes as your browser window resizes */
-  box-shadow: rgba(255, 255, 255, 0.4) 0px 7px 29px 0px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
   background-color: rgb(19, 17, 17);
 }
 
