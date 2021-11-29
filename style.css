@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background: linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .9)), url("https://t3.ftcdn.net/jpg/02/58/94/74/240_F_258947425_FdwXFXX5zxm5hqOi3vtZgpYJ7vbqqGHw.jpg");
+  background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .95)), url("https://t3.ftcdn.net/jpg/02/58/94/74/240_F_258947425_FdwXFXX5zxm5hqOi3vtZgpYJ7vbqqGHw.jpg");
   background-repeat: repeat;
   background-position: center;
   background-size: 100% 100%;
@@ -19,7 +19,7 @@ body {
 }
 
 .calculator {
-  border: 1px transparent rgb(133, 123, 123);
+  border: 2px outset rgb(104, 102, 102);
   border-radius: 15px;
   position: absolute;
   top: 50%;
@@ -27,8 +27,8 @@ body {
   transform: translate(-50%, -50%); /* used to select horizontal and vertical direction/coordinates */
   width: 400px;
   max-width: fit-content; /* resizes as your browser window resizes */
-  box-shadow: rgba(0, 0, 0, 1) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  background-color: rgb(49, 49, 49);
+  box-shadow: rgba(255, 255, 255, 0.4) 0px 7px 29px 0px;
+  background-color: rgb(19, 17, 17);
 }
 
 .calculator-screen {
