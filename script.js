@@ -27,6 +27,19 @@ function inputDecimal(dot) {
   }
 }
 
+function plusOrMinus() {
+  if (calculator.displayValue != '0') {
+    calculator.displayValue = `-${calculator.displayValue}`;
+  } else if (calculator.firstOperand === null) {
+    calculator.displayValue = '-';
+    return;
+  } else if(calculator.displayValue > 0) {
+    calculator.displayValue = `-${calculator.displayValue}`;
+  } else if(calculator.displayValue < 0) {
+    calculator.displayValue = `+${calculator.displayValue}`;
+  } 
+}
+
 function handleOperator(nextOperator) {
   const { firstOperand, displayValue, operator } = calculator;
   const inputValue = parseFloat(displayValue);
@@ -47,8 +60,6 @@ function handleOperator(nextOperator) {
   calculator.operator = nextOperator;
   console.log(calculator);
 }
-
-
 
 function calculate(firstOperand, secondOperand, operator) {
   if (operator === '+') {
@@ -71,11 +82,6 @@ function updateDisplay() {
   display.value = calculator.displayValue;
 }
 
-function deleteKey() {
-  value = calculator.displayValue;
-  calculator.displayValue = value.substr(0, value.length - 1);
-}
-
 function resetCalculator() {
   calculator.displayValue = '0';
   calculator.firstOperand = null;
@@ -96,6 +102,9 @@ keys.addEventListener('click', (event) => {
     inputDecimal(target.value);
     updateDisplay();
     return;
+  } else if (target.classList.contains('plus-minus')) {
+    plusOrMinus();
+    updateDisplay();
   } else if (target.classList.contains('delete')) {
     deleteKey();
     updateDisplay();
