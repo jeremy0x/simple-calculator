@@ -8,10 +8,12 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+
 }
 
 body {
-  background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .95)), url("https://t3.ftcdn.net/jpg/02/58/94/74/240_F_258947425_FdwXFXX5zxm5hqOi3vtZgpYJ7vbqqGHw.jpg");
+  background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .95)),
+    url("https://t3.ftcdn.net/jpg/02/58/94/74/240_F_258947425_FdwXFXX5zxm5hqOi3vtZgpYJ7vbqqGHw.jpg");
   background-repeat: repeat;
   background-position: center;
   background-size: 100% 100%;
@@ -20,25 +22,24 @@ body {
 
 .calculator {
   border: 2px outset rgb(104, 102, 102);
-  border-radius: 15px;
+  border-radius: 30px;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* used to select horizontal and vertical direction/coordinates */
-  width: 400px;
-  max-width: fit-content; /* resizes as your browser window resizes */
-  box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
-  background-color: rgb(19, 17, 17);
+  transform: translate(-50%, -50%);
+  width: 359px;
+  max-width: fit-content;
+  box-shadow: rgba(255, 255, 255, 0.14) 0px 7px 29px 0px;
+  background-color: black;
 }
 
 .calculator-screen {
   width: 100%;
   height: 120px;
-  font-size: 5rem;
+  font-size: 6rem;
   border: none;
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
-  background-color: rgb(0, 0, 0);
+  border-radius: 30px;
+  background-color: black;
   color: white;
   text-align: right;
   padding-right: 20px;
@@ -47,47 +48,46 @@ body {
 
 .calculator-keys {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr; /*you can use the 'repeat' keyword - repeat(4, 1fr); */
-  grid-gap: 20px 20px; /*grid-gap: grid-row-gap grid-column-gap; */
+  grid-template-columns: 1fr 1fr 1fr 1fr; /*or repeat(4, 1fr); */
+  /*grid-gap: grid-row-gap grid-column-gap; */
+  grid-gap: 20px 15px;
   padding: 20px;
 }
 
+button {
+  height: 70px;
+  background-color: rgb(59, 55, 55);
+  border-radius: 50%;
+  border: none;
+  font-size: 2.5rem;
+  color: white;
+}
+
+button:hover { background-color: rgb(100, 100, 100); }
+
+button:active { background-color: rgb(59, 55, 55); }
+
 .operator {
-  color: #fcfdfd;
-  background-color: rgb(159, 33, 218);
-  border-color: transparent;
+  color: white;
+  background-color: orange;
   font-size: 3rem;
 }
 
-.operator:hover { background-color: rgb(179, 74, 228); } .operator:active { background-color: rgb(159, 33, 218); }
+.operator:hover { background-color: rgb(207, 135, 0); }
 
-button {
-  height: 70px;
-  background-color: white;
-  border-radius: 50%;
-  border: 1px solid #c4c4c4;
-  font-size: 2.5rem;
+.operator:active { background-color: orange; }
+
+.top-row-button {
+  background-color: rgb(117, 116, 115);
   color: black;
+  font-size: 2rem;
 }
 
-button:hover { background-color: rgb(175, 172, 172); } button:active { background-color: white; }
+.top-row-button:hover { background-color: rgb(85, 85, 85); }
 
-.equal-sign {
-  background-color: white;
-  border-color: transparent;
+.top-row-button:active { background-color: rgb(117, 116, 115); }
+
+.zero-button {
+  grid-area: 5 / 1 / 6 / 3;
   border-radius: 50px;
-  color: black;
-  width: 100%;
-  grid-area: 5 / 3 / 6 / 5; /*grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end; */
 }
-
-.equal-sign:hover { background-color: rgb(175, 172, 172); } .equal-sign:active { background-color: white; }
-
-.orange-button {
-  background-color: rgb(255, 101, 45);
-  border-color: transparent;
-  color: white;
-  font-size: 2.2rem;
-}
-
-.orange-button:hover { background-color: rgb(252, 138, 101); } .orange-button:active { background-color: rgb(255, 101, 45); }
