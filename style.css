@@ -92,4 +92,5 @@ button:active { background-color: rgb(59, 55, 55); }
   border-radius: 50px;
   text-align: left;
   padding-left: 30px;
+  padding-right: 10px;
 }
