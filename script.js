@@ -28,16 +28,13 @@ function inputDecimal(dot) {
 }
 
 function plusOrMinus() {
-  if (calculator.displayValue != '0') {
-    calculator.displayValue = `-${calculator.displayValue}`;
-  } else if (calculator.firstOperand === null) {
+  if (calculator.displayValue.indexOf("-") == 0 ) {
+    calculator.displayValue = calculator.displayValue.substring(1);
+  } else if (calculator.displayValue == '0') {
     calculator.displayValue = '-';
-    return;
-  } else if(calculator.displayValue > 0) {
+  } else { 
     calculator.displayValue = `-${calculator.displayValue}`;
-  } else if(calculator.displayValue < 0) {
-    calculator.displayValue = `+${calculator.displayValue}`;
-  } 
+  }
 }
 
 function handleOperator(nextOperator) {
