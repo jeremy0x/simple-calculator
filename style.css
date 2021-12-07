@@ -63,6 +63,7 @@ button {
   border: none;
   font-size: 3rem;
   color: white;
+  cursor: pointer;
 }
 
 button:hover { background-color: rgb(100, 100, 100); }
