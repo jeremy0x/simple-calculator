@@ -59,21 +59,32 @@ body {
 
 button {
   height: 60px;
-  background-color: rgb(59, 55, 55);
+  background-color: rgb(100, 100, 100);
   border-radius: 50%;
   border: none;
   font-size: 2.5rem;
   color: white;
   cursor: pointer;
-  transform: translateY(-6px);
 }
 
-button:hover {
-  background-color: rgb(100, 100, 100);
-}
-
-button:active {
+button .animation {
+  display: block;
+  border-radius: 50%;
   background-color: rgb(59, 55, 55);
+  transform: translateY(-4px);
+  height: 60px;
+  padding: 12px;
+  will-change: transform;
+  transition: filter 250ms;
+}
+
+button:hover .animation {
+  transform: translateY(-6px);
+  transition: transform 250ms;
+}
+
+button:active .animation {
+  transform: translateY(-1px);
 }
 
 .operator {
@@ -99,4 +110,21 @@ button:active {
 .all-clear {
   grid-column: 1 / 5;
   border-radius: 50px;
+}
+
+.all-clear-animation {
+  display: block;
+  border-radius: 50px;
+  background-color: rgb(59, 55, 55);
+  transform: translateY(-4px);
+  height: 60px;
+  padding: 12px;
+}
+
+.all-clear-animation:hover {
+  transform: translateY(-6px);
+}
+
+.all-clear-animation:active {
+  transform: translateY(-2px);
 }
