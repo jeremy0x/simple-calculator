@@ -53,7 +53,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr; /*or repeat(4, 1fr); */
   /*grid-gap: grid-row-gap grid-column-gap; */
-  grid-gap: 20px 15px;
+  grid-gap: 18px 14px;
   padding: 20px;
 }
 
@@ -66,25 +66,20 @@ button {
   color: white;
   cursor: pointer;
   transform: translateY(-6px);
-  box-shadow: 0px 4px rgb(148, 147, 145);
 }
 
 button:hover {
   background-color: rgb(100, 100, 100);
-  box-shadow: 0px 5px orange;
 }
 
 button:active {
   background-color: rgb(59, 55, 55);
-  transform: scale(0.95);
-  box-shadow: 0px 0px transparent;
 }
 
 .operator {
   color: white;
   background-color: orange;
   font-size: 3rem;
-  box-shadow: 1px 3px rgb(75, 50, 1);
 }
 
 .operator:hover { background-color: rgb(207, 135, 0); }
@@ -95,7 +90,6 @@ button:active {
   background-color: rgb(117, 116, 115);
   color: black;
   font-size: 2rem;
-  box-shadow: 0px 3px rgb(255, 254, 253);
 }
 
 .top-row-button:hover { background-color: rgb(85, 85, 85); }
