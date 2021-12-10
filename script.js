@@ -84,6 +84,10 @@ function deleteKey() {
   calculator.displayValue = value.substr(0, value.length - 1);
 }
 
+function clearScreen() {
+  calculator.displayValue = '0';
+}
+
 function resetCalculator() {
   calculator.displayValue = '0';
   calculator.firstOperand = null;
@@ -109,6 +113,10 @@ keys.addEventListener('click', (event) => {
     updateDisplay();
   } else if (target.classList.contains('delete')) {
     deleteKey();
+    updateDisplay();
+    return;
+  } else if (target.classList.contains('clear-screen')) {
+    clearScreen();
     updateDisplay();
     return;
   } else if (target.classList.contains('all-clear')) {
