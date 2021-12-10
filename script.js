@@ -79,6 +79,11 @@ function updateDisplay() {
   display.value = calculator.displayValue;
 }
 
+function deleteKey() {
+  value = calculator.displayValue;
+  calculator.displayValue = value.substr(0, value.length - 1);
+}
+
 function resetCalculator() {
   calculator.displayValue = '0';
   calculator.firstOperand = null;
