@@ -66,12 +66,12 @@ button {
   color: white;
   cursor: pointer;
   transform: translateY(-6px);
-  box-shadow: 1px 4px rgb(148, 147, 145);
+  box-shadow: 0px 4px rgb(148, 147, 145);
 }
 
 button:hover {
   background-color: rgb(100, 100, 100);
-  
+  box-shadow: 0px 5px orange;
 }
 
 button:active {
@@ -114,7 +114,7 @@ button:active {
   border-radius: 50px;
 }
 
-.clear {
+.clear-screen {
   grid-area: 6 / 3 / 7 / 5;
   border-radius: 50px;
 }
