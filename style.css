@@ -96,19 +96,7 @@ button:active {
 
 .top-row-button:active { background-color: rgb(117, 116, 115); }
 
-.zero-button {
-  grid-area: 5 / 1 / 6 / 3;
-  border-radius: 50px;
-  text-align: left;
-  padding-left: 28px;
-}
-
 .all-clear {
-  grid-area: 6 / 1 / 7 / 3;
-  border-radius: 50px;
-}
-
-.clear-screen {
-  grid-area: 6 / 3 / 7 / 5;
+  grid-column: 1 / 5;
   border-radius: 50px;
 }
