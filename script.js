@@ -84,10 +84,6 @@ function deleteKey() {
   calculator.displayValue = value.substr(0, value.length - 1);
 }
 
-function clearScreen() {
-  calculator.displayValue = '0';
-}
-
 function resetCalculator() {
   calculator.displayValue = '0';
   calculator.firstOperand = null;
