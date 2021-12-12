@@ -97,7 +97,7 @@ function resetCalculator() {
 
 const keys = document.querySelector('.calculator-keys');
 keys.addEventListener('click', (event) => {
-  const { target } = event; // access the clicked element's class
+  const { target } = event; // access the clicked element
   if (!target.matches('button')) {
     return;
   } else if (target.classList.contains('operator')) {
