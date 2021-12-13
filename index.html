@@ -7,78 +7,28 @@
   </head>
   <body>
     <div class="calculator">
-      <div id="calculator-screen">
-        <input type="text" class="calculator-screen" value="0" disabled>
-      </div>
+      <div id="calculator-screen"><input type="text" class="calculator-screen" value="0" disabled></div>
       <div class="calculator-keys">
-        <button type="button" class="delete top-row-button">
-          <span>&larr;</span>
-        </button>
-        <button type="button" class="plus-minus top-row-button" value="plus-minus">
-          <span>+/-</span>
-        </button>
-        <button type="button" class="operator top-row-button" value="%">
-          <span>&#37;</span>
-        </button>
-        <button type="button" class="operator" value="/">
-          <span>&divide;</span>
-        </button>
-
-        <button type="button" value="7">
-          <span class="animation">7</span>
-        </button>
-        <button type="button" value="8">
-          <span class="animation">8</span>
-        </button>
-        <button type="button" value="9">
-          <span class="animation">9</span>
-        </button>
-        <button type="button" class="operator" value="*">
-          <span>&times;</span>
-        </button>
-
-        <button type="button" value="4">
-          <span class="animation">4</span>
-        </button>
-        <button type="button" value="5">
-          <span class="animation">5</span>
-        </button>
-        <button type="button" value="6">
-          <span class="animation">6</span>
-        </button>
-        <button type="button" class="operator" value="-">
-          <span>&minus;</span>
-        </button>
-
-        <button type="button" value="1">
-          <span class="animation">1</span>
-        </button>
-        <button type="button" value="2">
-          <span class="animation">2</span>
-        </button>
-        <button type="button" value="3">
-          <span class="animation number">3</span>
-        </button>
-        <button type="button" class="operator" value="+">
-          <span>&plus;</span>
-        </button>
-
-        <button type="button" value="0" class="zero-button">
-          <span class="animation">0</span>
-        </button>
-        <button type="button" class="decimal" value=".">
-          <span class="animation">&dot;</span>
-        </button>
-        <button type="button" class="clear-screen" value="clear">
-          <span class="animation">C</span>
-        </button>
-        <button type="button" class="operator equal-sign" value="=">
-          <span>&equals;</span>
-        </button>
-
-        <button type="button" class="all-clear" value="all-clear">
-          <span class="all-clear-animation">AC</span>
-        </button>
+        <button type="button" class="all-clear top-row-button" value="all-clear" title="all clear">AC</span></button>
+        <button type="button" class="plus-minus top-row-button" value="plus-minus" title="plus or minus">+/-</button>
+        <button type="button" class="percentage top-row-button" value="%" title="percentage">%</button>
+        <button type="button" class="operator" value="/" title="divide">&divide;</button>
+        <button type="button" value="7" title="seven">7</button>
+        <button type="button" value="8" title="eight">8</button>
+        <button type="button" value="9" title="nine">9</button>
+        <button type="button" class="operator" value="*" title="multiply">&times;</button>
+        <button type="button" value="4" title="four">4</button>
+        <button type="button" value="5" title="five">5</button>
+        <button type="button" value="6" title="six">6</button>
+        <button type="button" class="operator" value="-" title="subtract">-</button>
+        <button type="button" value="1" title="one">1</button>
+        <button type="button" value="2" title="two">2</button>
+        <button type="button" value="3" title="three">3</button>
+        <button type="button" class="operator" value="+"  title="add">+</button>
+        <button type="button" value="0" class="zero-button" title="zero">0</button>
+        <button type="button" class="decimal" value="." title="decimal">.</button>
+        <button type="button" class="delete" title="backspace">&larr;</button>
+        <button type="button" class="operator equal-sign" value="=" title="calculate">=</button>
       </div>
     </div>
     <script type="text/javascript" src="script.js"></script>
