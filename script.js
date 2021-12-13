@@ -80,8 +80,7 @@ function updateDisplay() {
 }
 
 function deleteKey() {
-  value = calculator.displayValue;
-  calculator.displayValue = value.substr(0, value.length - 1);
+  calculator.displayValue = calculator.displayValue.slice(0, calculator.displayValue.length - 1);
 }
 
 function resetCalculator() {
