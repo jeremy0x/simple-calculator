@@ -22,7 +22,7 @@ body {
 }
 
 .calculator {
-  border: 3px outset rgb(104, 102, 102);
+  border: 3px outset rgb(150, 150, 150);
   border-radius: 50px;
   position: absolute;
   top: 50%;
@@ -36,16 +36,18 @@ body {
 
 .calculator-screen {
   width: 100%;
-  height: 120px;
+  height: 140px;
   border: none;
-  border-radius: 50px;
-  background-color: black;
+  border-radius: 45px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: rgb(17, 17, 17);
   color: white;
   text-align: right;
   padding-right: 37px;
   padding-left: 30px;
   padding-top: 65px;
-  font-size: 6rem;
+  font-size: 6.5rem;
   font-weight: 100;
 }
 
@@ -58,8 +60,8 @@ body {
 }
 
 button {
-  height: 60px;
-  background-color: rgb(100, 100, 100);
+  height: 70px;
+  background-color: rgb(59, 55, 55);
   border-radius: 50%;
   border: none;
   font-size: 2.5rem;
@@ -67,24 +69,11 @@ button {
   cursor: pointer;
 }
 
-button .animation {
-  display: block;
-  border-radius: 50%;
+button:hover { background-color: rgb(100, 100, 100); }
+
+button:active {
   background-color: rgb(59, 55, 55);
-  transform: translateY(-4px);
-  height: 60px;
-  padding: 12px;
-  will-change: transform;
-  transition: filter 250ms;
-}
-
-button:hover .animation {
-  transform: translateY(-6px);
-  transition: transform 250ms;
-}
-
-button:active .animation {
-  transform: translateY(-1px);
+  transform: scale(0.95);
 }
 
 .operator {
@@ -97,6 +86,11 @@ button:active .animation {
 
 .operator:active { background-color: orange; }
 
+.operator:focus {
+  background-color: white;
+  color: orange;
+}
+
 .top-row-button {
   background-color: rgb(117, 116, 115);
   color: black;
@@ -106,25 +100,3 @@ button:active .animation {
 .top-row-button:hover { background-color: rgb(190, 189, 189); }
 
 .top-row-button:active { background-color: rgb(117, 116, 115); }
-
-.all-clear {
-  grid-column: 1 / 5;
-  border-radius: 50px;
-}
-
-.all-clear-animation {
-  display: block;
-  border-radius: 50px;
-  background-color: rgb(59, 55, 55);
-  transform: translateY(-4px);
-  height: 60px;
-  padding: 12px;
-}
-
-.all-clear-animation:hover {
-  transform: translateY(-6px);
-}
-
-.all-clear-animation:active {
-  transform: translateY(-2px);
-}
