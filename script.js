@@ -32,7 +32,7 @@ function plusOrMinus() {
     calculator.displayValue = calculator.displayValue.substring(1);
   } else if (calculator.displayValue == '0') {
     calculator.displayValue = '-';
-  } else { 
+  } else {
     calculator.displayValue = `-${calculator.displayValue}`;
   }
 }

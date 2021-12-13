@@ -100,3 +100,5 @@ button:active {
 .top-row-button:hover { background-color: rgb(190, 189, 189); }
 
 .top-row-button:active { background-color: rgb(117, 116, 115); }
+
+.percent:focus { color: black }
