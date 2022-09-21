@@ -1,6 +1,6 @@
 # [Simple Calculator](https://github.com/jeremiey/simple-calculator)
 
-**Live preview link**: <https://jeremiey.github.io/simple-calculator>
+**Live preview link**: <https://jeremy0x.github.io/simple-calculator>
 
 ## Screenshot
 
